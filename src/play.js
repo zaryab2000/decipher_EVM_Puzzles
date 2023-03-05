@@ -3,34 +3,36 @@ const { resolve } = require("path");
 const inquirer = require("inquirer");
 const chalk = require("chalk");
 const { getOpcode } = require("./opcodes");
+const art = require("ascii-art");
 
 module.exports.play = async function play() {
-  const playerChoice = await fetchDifficultyLevel();
-  while (true) {
-    const puzzle = getNextPuzzle(playerChoice.value);
+    console.log(chalk.cyanBright.bold.inverse.underline("\n\n\t\t\t\t DECIPHER  EVM  PUZZLES \t\t\t\t\t\t\n\n"))
+    const playerChoice = await fetchDifficultyLevel();
+    while (true) {
+        const puzzle = getNextPuzzle(playerChoice.value);
 
-    if (puzzle === undefined) {
-      console.log("All puzzles are solved!");
-      process.exit(0);
-    }
-
-    const solution = await playPuzzle(puzzle);
-
-    if (solution) {
-      saveSolution(puzzle.number, solution, playerChoice.value);
-
-      if (await askPlayNext()) {
-      } else {
-        console.log("Thanks for playing!");
+        if (puzzle === undefined) {
+        console.log("All puzzles are solved!");
         process.exit(0);
-      }
-    } else {
-      if (!(await askTryAgain())) {
-        console.log("Thanks for playing!");
-        process.exit(0);
-      }
+        }
+
+        const solution = await playPuzzle(puzzle);
+
+        if (solution) {
+        saveSolution(puzzle.number, solution, playerChoice.value);
+
+        if (await askPlayNext()) {
+        } else {
+            console.log("Thanks for playing!");
+            process.exit(0);
+        }
+        } else {
+        if (!(await askTryAgain())) {
+            console.log("Thanks for playing!");
+            process.exit(0);
+        }
+        }
     }
-  }
 };
 
 async function playPuzzle(puzzle) {
@@ -277,8 +279,8 @@ async function fetchDifficultyLevel() {
     {
       type: "list",
       name: "value",
-      message: "Select the Difficulty Level",
-      choices: [ "EASY", new inquirer.Separator(), "MEDIUM", new inquirer.Separator(), "HARD", new inquirer.Separator() ],
+      message: chalk.cyan.italic("\t\t Select the Difficulty Level - [ Use arrow to select an option ⬆️ ⬇️ ]\t"),
+      choices: [ "\t\t EASY", new inquirer.Separator(), "\t\t MEDIUM", new inquirer.Separator(), "\t\t HARD", new inquirer.Separator() ],
     }
   ]);
 
