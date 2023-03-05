@@ -1,0 +1,17 @@
+{
+  "name": "evm-puzzles",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "type": "commonjs",
+  "dependencies": {
+    "@nomiclabs/hardhat-ethers": "^2.0.2",
+    "boxen": "^7.0.2",
+    "chalk": "^4.1.2",
+    "ethers": "^5.4.4",
+    "figlet": "^1.5.2",
+    "fs-extra": "^10.0.1",
+    "hardhat": "^2.6.0",
+    "inquirer": "^8.2.0"
+  }
+}
