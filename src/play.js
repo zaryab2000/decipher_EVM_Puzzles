@@ -6,7 +6,7 @@ const { getOpcode } = require("./opcodes");
 const art = require("ascii-art");
 
 module.exports.play = async function play() {
-    console.log(chalk.cyanBright.bold.inverse.underline("\n\n\t\t\t\t DECIPHER  EVM  PUZZLES \t\t\t\t\t\t\n\n"))
+    printIntroText()
     const playerChoice = await fetchDifficultyLevel();
     while (true) {
         const puzzle = getNextPuzzle(playerChoice.value);
@@ -285,4 +285,13 @@ async function fetchDifficultyLevel() {
   ]);
 
   return playerChoice;
+}
+
+function printIntroText(){
+  const introText = "\n\n\t\t\t\t DECIPHER  EVM  PUZZLES \t\t\t\t\t\t\n\n"
+  const width = introText.length + 70;
+  console.log("-".repeat(width));
+  console.log(` ${chalk.cyanBright.bold.inverse.underline(introText)} `);
+  console.log("-".repeat(width));
+  console.log('\n\n')
 }
