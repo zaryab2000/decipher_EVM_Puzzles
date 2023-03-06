@@ -8,6 +8,7 @@ const art = require("ascii-art");
 module.exports.play = async function play() {
     printIntroText()
     const playerChoice = await fetchDifficultyLevel();
+    console.log(playerChoice)
     while (true) {
         const puzzle = getNextPuzzle(playerChoice.value);
 
@@ -280,7 +281,7 @@ async function fetchDifficultyLevel() {
       type: "list",
       name: "value",
       message: chalk.cyan.italic("\t\t Select the Difficulty Level - [ Use arrow to select an option ⬆️ ⬇️ ]\t"),
-      choices: [ "\t\t EASY", new inquirer.Separator(), "\t\t MEDIUM", new inquirer.Separator(), "\t\t HARD", new inquirer.Separator() ],
+      choices: [ "EASY", new inquirer.Separator(), "MEDIUM", new inquirer.Separator(), "HARD", new inquirer.Separator() ],
     }
   ]);
 
