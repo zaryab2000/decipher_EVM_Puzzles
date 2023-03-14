@@ -3,7 +3,6 @@ const { resolve } = require("path");
 const inquirer = require("inquirer");
 const chalk = require("chalk");
 const { getOpcode } = require("./opcodes");
-const art = require("ascii-art");
 
 module.exports.play = async function play() {
     printIntroText()
