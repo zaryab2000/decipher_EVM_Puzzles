@@ -8,7 +8,7 @@ const art = require("ascii-art");
 module.exports.play = async function play() {
     printIntroText()
     const playerChoice = await fetchDifficultyLevel();
-    console.log(playerChoice)
+
     while (true) {
         const puzzle = getNextPuzzle(playerChoice.value);
 
@@ -224,20 +224,7 @@ function printTitle(i) {
 }
 
 function getNextPuzzle(playerChoice) {
-  const { root } = hre.config.paths;
-  var solutionsDir;
-  var puzzlesDir;
-
-  if(playerChoice === "EASY"){
-    solutionsDir = resolve(root, "allSolutions/1_easySolutions");
-    puzzlesDir = resolve(root, "allPuzzles/1_easyPuzzles");    
-  }else if(playerChoice === "MEDIUM"){
-    solutionsDir = resolve(root, "allSolutions/2_mediumSolutions");
-    puzzlesDir = resolve(root, "allPuzzles/2_mediumPuzzles"); 
-  }else{
-    solutionsDir = resolve(root, "allSolutions/3_hardSolutions");
-    puzzlesDir = resolve(root, "allPuzzles/3_hardPuzzles"); 
-  }
+  var {solutionsDir, puzzlesDir} = routePlayerChoice(playerChoice);
 
   fs.ensureDirSync(solutionsDir);
 
@@ -258,16 +245,7 @@ function getNextPuzzle(playerChoice) {
 }
 
 function saveSolution(puzzleNumber, solution, playerChoice) {
-  const { root } = hre.config.paths;
-
-  var solutionsDir;
-  if(playerChoice === "EASY"){
-    solutionsDir = resolve(root, "allSolutions/1_easySolutions");
-  }else if(playerChoice === "MEDIUM"){
-    solutionsDir = resolve(root, "allSolutions/2_mediumSolutions");
-  }else{
-    solutionsDir = resolve(root, "allSolutions/3_hardSolutions");
-  }
+  var {solutionsDir, } = routePlayerChoice(playerChoice);
 
   fs.writeJsonSync(
     resolve(solutionsDir, `solution_${puzzleNumber}.json`),
@@ -286,6 +264,25 @@ async function fetchDifficultyLevel() {
   ]);
 
   return playerChoice;
+}
+
+function routePlayerChoice(playerChoice){
+  const { root } = hre.config.paths;
+  var solutionsDir;
+  var puzzlesDir;
+
+  if(playerChoice === "EASY"){
+    solutionsDir = resolve(root, "allSolutions/1_easySolutions");
+    puzzlesDir = resolve(root, "allPuzzles/1_easyPuzzles");    
+  }else if(playerChoice === "MEDIUM"){
+    solutionsDir = resolve(root, "allSolutions/2_mediumSolutions");
+    puzzlesDir = resolve(root, "allPuzzles/2_mediumPuzzles"); 
+  }else{
+    solutionsDir = resolve(root, "allSolutions/3_hardSolutions");
+    puzzlesDir = resolve(root, "allPuzzles/3_hardPuzzles"); 
+  }
+
+  return {solutionsDir, puzzlesDir};
 }
 
 function printIntroText(){
