@@ -1,5 +1,7 @@
 {
   "code": "60113414600c0156FDFDFDFD5B00",
   "askForValue": true,
-  "askForData": false
+  "askForData": false,
+  "hint": false,
+  "hintMessage": "💡 Read more about Opcodes"
 }
