@@ -50,9 +50,10 @@ async function playPuzzle(puzzle) {
     console.log(chalk.green("Puzzle solved!"));
   } else {
     console.error(chalk.red("Wrong solution :("));
+    await checkForHint(puzzle);
   }
   console.log();
-  console.log("Run it in evm.codes:", evmCodesUrl);
+  console.log(chalk.blue("To get more clarity, Run it in evm.codes as well:"), evmCodesUrl);
   console.log();
 
   if (success) {
@@ -86,6 +87,20 @@ async function askTryAgain() {
   console.log();
 
   return answers.tryAgain;
+}
+
+async function askIfHintNeeded() {
+  const answers = await inquirer.prompt([
+    {
+      type: "confirm",
+      name: "hintNeeded",
+      message: "Do you Need Some HINT ?"
+    }
+  ]);
+
+  console.log();
+
+  return answers.hintNeeded;
 }
 
 function printCode(code) {
@@ -263,6 +278,15 @@ async function fetchDifficultyLevel() {
   ]);
 
   return playerChoice;
+}
+
+async function checkForHint(puzzle){
+  if(puzzle.hint){
+    if ((await askIfHintNeeded())) {
+      console.log(chalk.yellow(puzzle.hintMessage))
+      console.log('\n')
+    }
+  }
 }
 
 function routePlayerChoice(playerChoice){
