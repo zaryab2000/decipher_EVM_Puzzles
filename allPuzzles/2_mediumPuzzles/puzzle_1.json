@@ -1,7 +1,7 @@
 {
-  "code": "3634553436553654345401600a14601757FDFDFDFDFDFD5b00",
+  "code": "600235345234360435345114601357fdfdfdfd5b00",
   "askForValue": true,
   "askForData": true,
-  "hint": true,
-  "hintMessage": "💡 Read more about Opcodes"
+  "hint": false,
+  "hintMessage": "💡 No Hint for this one"
 }
