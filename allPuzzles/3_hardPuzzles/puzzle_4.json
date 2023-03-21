@@ -1,7 +1,7 @@
 {
-  "code": "38349011600857FD5B3661000390061534600A0157FDFDFDFD5B00",
+  "code": "363410600114600b57fdfd5b60058034106001146022573411600114602d57fdfdfd5b3436163614602d57fdfd5b3634173614603a57fdfdfdfd5b00",
   "askForValue": true,
   "askForData": true,
-  "hint": false,
-  "hintMessage": "💡 Read more about Opcodes"
+  "hint": true,
+  "hintMessage": "💡 Understanding the role of'OR' opcode is crucial for this one"
 }

@@ -1,7 +1,7 @@
 {
-  "code": "36600080373660006000F03B600114601357FD5B00",
-  "askForValue": false,
+  "code": "60008035905236600034f0808031903b14908031903b020156fdfdfdfdfdfdfdfdfdfdfdfd5b00",
+  "askForValue": true,
   "askForData": true,
-  "hint": false,
-  "hintMessage": "💡 Read more about Opcodes"
+  "hint": true,
+  "hintMessage": "💡 The BALANCE and EXTCODESIZE of the contract you create is the KEY🔑"
 }
