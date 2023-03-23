@@ -52,7 +52,6 @@ async function playPuzzle(puzzle) {
     console.error(chalk.red("Wrong solution :("));
     await checkForHint(puzzle);
   }
-  console.log();
   console.log(chalk.blue("To get more clarity, Run it in evm.codes as well:"), evmCodesUrl);
   console.log();
 
@@ -283,7 +282,7 @@ async function fetchDifficultyLevel() {
 async function checkForHint(puzzle){
   if(puzzle.hint){
     if ((await askIfHintNeeded())) {
-      console.log(chalk.yellow(puzzle.hintMessage))
+      console.log(chalk.yellow.bold.inverse.underline(puzzle.hintMessage))
       console.log('\n')
     }
   }
