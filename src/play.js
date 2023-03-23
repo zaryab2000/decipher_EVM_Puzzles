@@ -12,7 +12,7 @@ module.exports.play = async function play() {
         const puzzle = getNextPuzzle(playerChoice.value);
 
         if (puzzle === undefined) {
-        console.log("All puzzles are solved!");
+        printNextSteps(playerChoice.value);
         process.exit(0);
         }
 
@@ -306,6 +306,16 @@ function routePlayerChoice(playerChoice){
   }
 
   return {solutionsDir, puzzlesDir};
+}
+
+function printNextSteps(playerChoice){
+  if(playerChoice === "EASY"){
+    console.log(chalk.cyan.bold.inverse.underline("\n Congrats! 👏 All Easy Puzzles are SOLVED 👉 Start Deciphering MEDIUM-LEVEL Puzzles \n "));
+  }else if(playerChoice === "MEDIUM"){
+    console.log(chalk.cyan.bold.inverse.underline("\n Well Done 👏! All Medium Puzzles are SOLVED 👉 Start Deciphering HARD-LEVEL Puzzles \n "));
+  }else{
+    console.log(chalk.cyan.bold.inverse.underline("\n You are a Rockstart 🔥! You Solved all Puzzles \n"));
+  }
 }
 
 function printIntroText(){
