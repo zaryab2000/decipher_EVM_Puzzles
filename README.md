@@ -1,4 +1,5 @@
 # decipher_EVM_Puzzles
+![EVM Puzzle](https://user-images.githubusercontent.com/42082608/227203303-cb635c7a-a495-435b-9695-5f2fd1c75425.png)
 Decipher EVM puzzles are basically a collection of EVM opcodes puzzles that includes a bunch of different opcodes which can be executed successfully only if you provide the right inputs.
 
 The Decipher EVM Puzzle game is an extended version of [Franco's EVM puzzles](https://github.com/fvictorio/evm-puzzles) but with *additional complexity, a difficulty-level selector making it available not just for senior devs but also beginners, and more interesting puzzles covering a wide range of opcodes*.
