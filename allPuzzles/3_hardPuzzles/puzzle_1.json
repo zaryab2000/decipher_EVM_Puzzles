@@ -3,5 +3,5 @@
   "askForValue": true,
   "askForData": true,
   "hint": true,
-  "hintMessage": "💡 The BALANCE and EXTCODESIZE of the contract you create is the KEY🔑"
+  "hintMessage": "💡 The BALANCE and EXTCODESIZE of the contract(within your CallData input) is the KEY🔑"
 }
