@@ -13,6 +13,13 @@ Your main goal as a player is to provide the right set of inputs so that the tra
 
 >If it reverts, you FAIL...❌ If it executes successfully, You SOLVED that particular puzzle. ✅
 
+### Imperative Note
+* Solutions to puzzles can have more a formulae instead of one specific value.
+    * For instance, some puzzles may require a type of input where **Calldata size must be n** and **CallValue must be n+4**,in order for you to solve it correctly.
+    * For such cases, correct **CallData Size can be 4 or 5 or 6 and CallValue can be 8 or 9 or 10 respectively**
+    * It's imperative to understand the formulae rather than chasing 1 specific calldata size or callvalue as the right answer, for such a puzzle
+* Solutions to the same puzzle can also be more than 1 specific input.
+
 ## How to Play?
 1. Clone this repository
 ```
