@@ -11,7 +11,7 @@ Every puzzle might require one of the following as input from the player:
 
 Your main goal as a player is to provide the right set of inputs so that the transaction doesn't get reverted. 
 
->If it reverts, you FAIL...❌ If it executes successfully, >You SOLVED that puzzle. ✅
+>If it reverts, you FAIL...❌ If it executes successfully, You SOLVED that particular puzzle. ✅
 
 ## How to Play?
 1. Clone this repository
