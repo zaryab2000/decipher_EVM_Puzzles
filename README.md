@@ -1,4 +1,4 @@
-# decipher_EVM_Puzzles
+# decipher_EVM_puzzles
 ![EVM Puzzle](https://user-images.githubusercontent.com/42082608/227203303-cb635c7a-a495-435b-9695-5f2fd1c75425.png)
 Decipher EVM puzzles are basically a collection of EVM opcodes puzzles that includes a bunch of different opcodes which can be executed successfully only if you provide the right inputs.
 
