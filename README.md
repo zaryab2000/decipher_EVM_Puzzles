@@ -1,6 +1,6 @@
 # decipher_EVM_puzzles
 
-> **[Featured in Week In Ethereum News-April 2023](https://weekinethereumnews.com/week-in-ethereum-news-april-1-2023/)** 
+> **[ 🌟 Featured in Week In Ethereum News-April 2023](https://weekinethereumnews.com/week-in-ethereum-news-april-1-2023/)** 
 
 ![EVM Puzzle](https://user-images.githubusercontent.com/42082608/227203303-cb635c7a-a495-435b-9695-5f2fd1c75425.png)
 Decipher EVM puzzles are basically a collection of EVM opcodes puzzles that includes a bunch of different opcodes which can be executed successfully only if you provide the right inputs.
